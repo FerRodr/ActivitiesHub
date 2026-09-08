@@ -2,9 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EventsHub.Api.Controllers;
 
-[ApiController]
-[Route("[controller]")]
-public class WeatherForecastController : ControllerBase
+public class WeatherForecastController : EventsHubBaseContoller
 {
     private static readonly string[] Summaries =
     [
@@ -23,5 +21,3 @@ public class WeatherForecastController : ControllerBase
         .ToArray();
     }
 }
-
-
