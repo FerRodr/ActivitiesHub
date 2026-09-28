@@ -1,11 +1,10 @@
-// import { List, ListItem, ListItemText, Typography } from "@mui/material";
-// import axios from "axios";
-import { useEffect, useState } from "react"
+import { List, ListItem, ListItemText, Typography } from "@mui/material";
+import react from "react"
 
 function App() {
-  const [activities, setActivities] = useState<Activity[]>([]);
+  const [activities, setActivities] = react.useState<Activity[]>([]);
 
-  useEffect(() => {
+  react.useEffect(() => {
     fetch('https://localhost:5001/api/v1/events')
       .then(response => response.json())
       .then(data => setActivities(data));
@@ -14,7 +13,6 @@ function App() {
   }, []);
 
   return (
-    /*
     <>
        <Typography variant ="h3">Events Hub</Typography>
        <List>
@@ -25,15 +23,6 @@ function App() {
          ))}
        </List>
      </>
-   */
-    <div>
-      <h3 style={{color: 'red'}}>Events Hub</h3>
-      <ul>
-        {activities.map((activity) => (
-          <li key={activity.id}>{activity.title}</li>
-        ))}
-      </ul>
-    </div>
   )
 }
 
